@@ -1,8 +1,8 @@
 # Software Requirements
 
 **Status:** v0.2  
-**Scope:** Requirements that can already be derived from agreed game rules.  
-**Important:** Undecided product behavior must remain in `OPEN_DECISIONS.md` until a decision is made.
+**Scope: Agreed software requirements derived from core game rules and resolved product decisions.
+Important:** Undecided product behavior must remain in `OPEN\_DECISIONS.md` until a decision is made.
 
 ## Requirement ID Policy
 
@@ -10,13 +10,14 @@ Requirement IDs are **stable identifiers, not sequence numbers**.
 
 Format:
 
-- `FR-<AREA>-NNN` — Functional Requirement
-- `NFR-<AREA>-NNN` — Non-Functional Requirement
+* `FR-<AREA>-NNN` — Functional Requirement
+* `NFR-<AREA>-NNN` — Non-Functional Requirement
 
 Examples:
-- `FR-ACES-003`
-- `FR-HISTORY-004`
-- `NFR-SEC-001`
+
+* `FR-ACES-003`
+* `FR-HISTORY-004`
+* `NFR-SEC-001`
 
 Rules for maintaining IDs:
 
@@ -28,7 +29,7 @@ Rules for maintaining IDs:
 
 This keeps references from tests, Issues, Pull Requests, commits, and ADRs stable over time.
 
----
+\---
 
 ## Players, Seats, and Teams
 
@@ -58,13 +59,12 @@ At the start of a full game, the system shall perform the Aces procedure before 
 The first four cards dealt during the Aces procedure shall not count toward team selection.
 
 **FR-ACES-003**  
-If all four ignored initial cards are Aces, the system shall restart the Aces procedure after reshuffling.
-
+If three or four of the first four cards dealt during the Aces procedure are Aces, the system shall collect the dealt cards, reshuffle the complete deck, and restart the Aces procedure from the beginning.
 **FR-ACES-004**  
 Starting from the fifth card, the first player to receive an Ace shall become the Kem.
 
 **FR-ACES-005**  
-After a player becomes the Kem, the Aces procedure shall continue clockwise while skipping that player.
+After the Kem is determined, the Aces procedure shall continue clockwise among the remaining players, skipping the Kem.
 
 **FR-ACES-006**  
 The next remaining player to receive an Ace shall become the Kem's partner.
@@ -73,7 +73,13 @@ The next remaining player to receive an Ace shall become the Kem's partner.
 The remaining two players shall form the opposing team.
 
 **FR-ACES-008**  
-The Amal shall be the player immediately to the right of the Kem.
+After any seating adjustment required by the Aces procedure is complete, the Amal shall be the player immediately to the right of the Kem.
+**FR-ACES-009**
+
+Once both teams have been determined, the Kem shall remain in the same seat. If the Kem's partner is not already seated diagonally opposite the Kem, the system shall swap the Kem's partner with the player currently seated opposite the Kem.
+**FR-ACES-010**
+
+After the Aces procedure is complete, the system shall collect all 52 cards and reshuffle the complete deck before dealing the first round.
 
 ## Round Deal
 
@@ -105,6 +111,9 @@ After the Hook is selected, the Kem and the Kem's partner shall be allowed to vi
 
 **FR-VIS-006**  
 The selected Hook shall remain unchanged for the duration of the round.
+**FR-VIS-007**
+
+Once the Kem has received the first 5 cards, the Kem shall be allowed to declare the Hook while the remaining cards are still being dealt.
 
 ## Trick Play
 
@@ -154,7 +163,7 @@ The system shall not provide access to tricks older than the immediately previou
 **FR-HISTORY-004**  
 While any player is actively viewing the immediately previous trick, the system shall not allow the next trick to start.
 
-> The maximum viewing duration is intentionally not specified yet. See `OD-007` in `OPEN_DECISIONS.md`.
+> The maximum viewing duration is intentionally not specified yet. See `OD-007` in `OPEN\_DECISIONS.md`.
 
 ## Round Scoring
 
@@ -217,15 +226,16 @@ None yet.
 
 The following are intentionally not specified here yet because they are product/architecture decisions rather than agreed rules:
 
-- Exact timeout/auto-close behavior when viewing the previous trick.
-- Chat between rounds.
-- Exact digital purpose of the Amal.
-- Turn timers.
-- Disconnect/reconnect behavior.
-- Room creation/join flow.
-- Authentication details.
-- Persistent statistics.
-- Matchmaking.
-- Spectators.
+* Exact timeout/auto-close behavior when viewing the previous trick.
+* Chat between rounds.
+* Exact digital purpose of the Amal.
+* Turn timers.
+* Disconnect/reconnect behavior.
+* Room creation/join flow.
+* Authentication details.
+* Persistent statistics.
+* Matchmaking.
+* Spectators.
 
-These belong in `OPEN_DECISIONS.md` until resolved.
+These belong in `OPEN\_DECISIONS.md` until resolved.
+
