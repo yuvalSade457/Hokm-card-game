@@ -11,10 +11,11 @@ The four players sit **in a circle** and are divided into two fixed teams. Partn
 
 The game has three levels:
 
-* **Trick / Hand** — four cards, one played by each player.
+* **Trick** — four cards, one played by each player.
 * **Round / Gamelet** — the first team to win 7 tricks wins the round.
 * **Full Game** — the first team to reach 7 or more points wins the full game.
 
+A Hand is the set of cards currently held by a player.
 A normal round win is worth 1 point. A 7–0 round can be worth 2 or 3 points as described below.
 
 ## 2\. Card Ranking
