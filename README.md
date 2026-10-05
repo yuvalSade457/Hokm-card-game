@@ -10,22 +10,23 @@ The project is intentionally developed in stages so that each architectural deci
 
 ## Current Status
 
-**Phase 0 — Specification & Project Setup**
+**Phase 0 — Specification \& Project Setup**
 
 At this stage:
-- The core game rules are defined.
-- Core software requirements are being extracted from the rules.
-- Product questions that are not yet decided are tracked separately.
-- The technology stack and final architecture are intentionally **not yet selected**.
+
+* The core game rules are defined.
+* Core software requirements are being extracted from the rules.
+* Product questions that are not yet decided are tracked separately.
+* The technology stack and final architecture are intentionally **not yet selected**.
 
 ## Documentation
 
-- [`docs/GAME_RULES.md`](docs/GAME_RULES.md) — authoritative description of the game rules.
-- [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) — testable software requirements derived from the rules.
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — staged development plan.
-- [`docs/OPEN_DECISIONS.md`](docs/OPEN_DECISIONS.md) — unresolved product/design questions.
-- [`docs/AI_WORKFLOW.md`](docs/AI_WORKFLOW.md) — rules for using AI during development.
-- [`docs/adr/`](docs/adr/) — Architecture Decision Records for important technical decisions.
+* [`docs/GAME\\\_RULES.md`](docs/GAME_RULES.md) — authoritative description of the game rules.
+* [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) — testable software requirements derived from the rules.
+* [`docs/ROADMAP.md`](docs/ROADMAP.md) — staged development plan.
+* [`docs/OPEN\\\_DECISIONS.md`](docs/OPEN_DECISIONS.md) — unresolved product/design questions.
+* [`docs/AI\\\_WORKFLOW.md`](docs/AI_WORKFLOW.md) — rules for using AI during development.
+* [`docs/adr/`](docs/adr/) — Architecture Decision Records for important technical decisions.
 
 ## Development Principles
 
@@ -52,17 +53,19 @@ See [`docs/ROADMAP.md`](docs/ROADMAP.md) for details.
 
 Initial recommendation:
 
-- `main` should remain in a working state.
-- Work is done on short-lived branches such as:
-  - `feature/game-engine`
-  - `feature/trick-validation`
-  - `feature/cli-game`
-  - `fix/trump-resolution`
-- A meaningful change should normally be associated with an Issue and merged through a Pull Request.
-- Tags/releases can mark portfolio milestones such as:
-  - `v0.1-cli`
-  - `v0.2-web`
-  - `v0.3-multiplayer`
+* `main` should remain in a working state.
+* Work is done on short-lived branches such as:
+
+  * `feature/game-engine`
+  * `feature/trick-validation`
+  * `feature/cli-game`
+  * `fix/trump-resolution`
+* A meaningful change should normally be associated with an Issue and merged through a Pull Request.
+* Tags/releases can mark portfolio milestones such as:
+
+  * `v0.1-cli`
+  * `v0.2-web`
+  * `v0.3-multiplayer`
 
 A separate `develop` branch is not required at the beginning of a single-developer project.
 
@@ -71,3 +74,4 @@ A separate `develop` branch is not required at the beginning of a single-develop
 **TBD.**
 
 The stack should be selected only after the initial requirements, product scope, and first architectural decisions are reviewed.
+
